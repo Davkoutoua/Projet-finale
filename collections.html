@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nos Collections — Aliagui Home</title>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome 6 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="collections.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <div class="logo">
+        <a href="project.html">
+          <img src="images/LOGO.svg" alt="Aliagui Home logo" class="mon-logo" />
+        </a>
+      </div>
+      <ul>
+        <li><a href="project.html">Accueil</a></li>
+        <li><a href="project.html">À propos</a></li>
+        <li><a href="collections.html" class="active">Collections</a></li>
+        <li><a href="project.html">Contact</a></li>
+      </ul>
+    </header>
+
+    <!--  KENTE -->
+    <div class="kente"></div>
+
+    <!--  HERO COLLECTIONS -->
+    <section class="hero-collections">
+      <p class="hero-eyebrow">Aliagui Home</p>
+      <h1>Nos <em>Collections</em></h1>
+      <p class="hero-desc">
+        Découvrez notre gamme de produits uniques, alliant l'héritage du pagne
+        africain à un design moderne et raffiné.
+      </p>
+      <p class="breadcrumb">
+        <a href="project.html">Accueil</a> &gt; Collections
+      </p>
+    </section>
+
+    <!-- FILTRES -->
+    <div class="filters" id="filterContainer">
+      <button class="filter-btn active" data-filter="all">Tous</button>
+      <button class="filter-btn" data-filter="decoration">Décoration</button>
+      <button class="filter-btn" data-filter="draps">Draps en pagne</button>
+      <button class="filter-btn" data-filter="table">Service de table</button>
+      <button class="filter-btn" data-filter="new">Nouveautés</button>
+    </div>
+
+    <!-- COMPTEUR  -->
+    <div class="products-count">
+      <span id="visibleCount">6</span> produit(s) affiché(s)
+    </div>
+
+    <!-- GRILLE PRODUITS  -->
+    <section class="products-grid" id="productsGrid">
+      <!-- Produit 1 -->
+      <div class="product-card" data-category="decoration" data-status="new">
+        <div class="product-image">
+          <img src="images/Produit 1.jpeg" alt="Taie d'oreiller en pagne" />
+          <span class="product-badge new">Nouveau</span>
+        </div>
+        <div class="product-info">
+          <p class="product-category">Décoration</p>
+          <h3 class="product-name"></h3>
+          <p class="product-desc">Collection Antique</p>
+          <p class="product-price">15 000 FCFA</p>
+          <div class="product-actions">
+            <a href="#" class="btn-product btn-primary-product">
+              <i class="fas fa-shopping-cart"></i> Ajouter
+            </a>
+            <a href="#" class="btn-product btn-outline-product">
+              <i class="fas fa-heart"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Produit 2  -->
+      <div class="product-card" data-category="draps" data-status="trend">
+        <div class="product-image">
+          <img src="images/Produit 2.jpg" alt="Complet en pagne" />
+          <span class="product-badge">Tendance</span>
+        </div>
+        <div class="product-info">
+          <p class="product-category">Draps en pagne</p>
+          <h3 class="product-name">COMPLET BULUMAN</h3>
+          <p class="product-desc">Collection FLORA</p>
+          <p class="product-price">40 000 FCFA</p>
+          <div class="product-actions">
+            <a href="#" class="btn-product btn-primary-product">
+              <i class="fas fa-shopping-cart"></i> Ajouter
+            </a>
+            <a href="#" class="btn-product btn-outline-product">
+              <i class="fas fa-heart"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Produit 3  -->
+      <div class="product-card" data-category="draps" data-status="new">
+        <div class="product-image">
+          <img src="images/Produit 3.jpg" alt="Complet en pagne" />
+          <span class="product-badge new">Nouveau</span>
+        </div>
+        <div class="product-info">
+          <p class="product-category">Draps en pagne</p>
+          <h3 class="product-name">COMPLET IDUBE</h3>
+          <p class="product-desc">collection antique</p>
+          <p class="product-price">40 000 FCFA</p>
+          <div class="product-actions">
+            <a href="#" class="btn-product btn-primary-product">
+              <i class="fas fa-shopping-cart"></i> Ajouter
+            </a>
+            <a href="#" class="btn-product btn-outline-product">
+              <i class="fas fa-heart"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Produit 4  -->
+      <div class="product-card" data-category="decoration" data-status="trend">
+        <div class="product-image">
+          <img src="images/Produit 4.jpeg" alt="Coussin en pagne" />
+          <span class="product-badge">Tendance</span>
+        </div>
+        <div class="product-info">
+          <p class="product-category">Décoration</p>
+          <h3 class="product-name">ENSEMBLE TAIES HAOUSSA</h3>
+          <p class="product-desc">Collection Antique</p>
+          <p class="product-price">15 000 FCFA</p>
+          <div class="product-actions">
+            <a href="#" class="btn-product btn-primary-product">
+              <i class="fas fa-shopping-cart"></i> Ajouter
+            </a>
+            <a href="#" class="btn-product btn-outline-product">
+              <i class="fas fa-heart"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Produit 5  -->
+      <div class="product-card" data-category="table" data-status="sold">
+        <div class="product-image">
+          <img src="images/Produit 5.jpeg" alt="Nappe en pagne" />
+          <span class="product-badge sold-out">Épuisé</span>
+        </div>
+        <div class="product-info">
+          <p class="product-category">Service de table</p>
+          <h3 class="product-name">SETS DE TABLE - DEJEUNER</h3>
+          <p class="product-desc">Collection Antique</p>
+          <p class="product-price">12 000 FCFA</p>
+          <div class="product-actions">
+            <a href="#" class="btn-product btn-primary-product">
+              <i class="fas fa-shopping-cart"></i> Ajouter
+            </a>
+            <a href="#" class="btn-product btn-outline-product">
+              <i class="fas fa-heart"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Produit 6  -->
+      <div class="product-card" data-category="draps" data-status="new">
+        <div class="product-image">
+          <img
+            src="images/Bogolan_African_Print_Bedding_Set_Duvet_and_Pillow_Covers_2.webp"
+            alt="Drap housse en pagne"
+          />
+          <span class="product-badge new">Nouveau</span>
+        </div>
+        <div class="product-info">
+          <p class="product-category">Draps en pagne</p>
+          <h3 class="product-name">COMPLER SOKOLA</h3>
+          <p class="product-desc">Collection Antique</p>
+          <p class="product-price">40 000 FCFA</p>
+          <div class="product-actions">
+            <a href="#" class="btn-product btn-primary-product">
+              <i class="fas fa-shopping-cart"></i> Ajouter
+            </a>
+            <a href="#" class="btn-product btn-outline-product">
+              <i class="fas fa-heart"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--  KENTE -->
+    <div class="kente"></div>
+
+    <!--  BANDE WHATSAPP -->
+    <section class="whatsapp-banner">
+      <div class="wa-text">
+        <h3>Besoin d'aide ou d'informations ?</h3>
+        <p>Contactez-nous facilement sur WhatsApp</p>
+      </div>
+      <a href="https://wa.me/2250142789097" target="_blank" class="wa-btn">
+        <i class="fab fa-whatsapp"></i> DISCUTEZ SUR WHATSAPP
+      </a>
+    </section>
+
+    <!--  FOOTER  -->
+    <footer id="contact">
+      <div class="footer-content">
+        <!-- Colonne 1 (Brand) -->
+        <div class="footer-brand">
+          <a href="project.html">
+            <img
+              src="images/LOGO.svg"
+              alt="Aliagui Home logo"
+              class="footer-mini-logo"
+            />
+          </a>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook" class="social-icon"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a
+              href="https://vt.tiktok.com/ZSXdN9X7a/"
+              target="_blank"
+              aria-label="TikTok"
+              class="social-icon"
+              ><i class="fab fa-tiktok"></i
+            ></a>
+            <a
+              href="https://wa.me/2250142789097"
+              target="_blank"
+              aria-label="WhatsApp"
+              class="social-icon"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/sublimeroomci?igsh=aW40NDJrYzNyMXk3"
+              target="_blank"
+              aria-label="Instagram"
+              class="social-icon"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+
+        <!-- Colonne 2 (Navigation) -->
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="project.html">Accueil</a></li>
+            <li><a href="project.html">À propos</a></li>
+            <li><a href="collections.html">Collections</a></li>
+            <li><a href="project.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Colonne 3 (Catégories) -->
+        <div class="footer-col">
+          <h4>Catégories</h4>
+          <ul>
+            <li><a href="collections.html">Décoration</a></li>
+            <li><a href="collections.html">Draps en pagne</a></li>
+            <li><a href="collections.html">Service de table</a></li>
+            <li><a href="collections.html">Nouveautés</a></li>
+          </ul>
+        </div>
+
+        <!-- Colonne 4 (Contact) -->
+        <div class="footer-col footer-newsletter">
+          <h4>Restez connecté</h4>
+          <p class="newsletter-text">
+            Recevez nos nouveautés et offres spéciales
+          </p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Votre email" required />
+            <button type="submit"><i class="fas fa-arrow-right"></i></button>
+          </form>
+          <div class="footer-contact">
+            <a href="mailto:aliaguihome@gmail.com"
+              ><i class="fas fa-envelope"></i> aliaguihome@gmail.com</a
+            >
+            <a href="tel:+2250142789097"
+              ><i class="fas fa-phone"></i>+225 01 42 78 90 97</a
+            >
+            <a href="#"
+              ><i class="fas fa-map-marker-alt"></i> ANONO Marché , ABIDJAN</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="footer-bottom">
+        <p>© 2026 Aliagui Home. Tous droits réservés</p>
+        <div class="footer-legal">
+          <a href="#">Mentions Légales</a>
+          <span>•</span>
+          <a href="#">Politique de confidentialité</a>
+          <span>•</span>
+        </div>
+      </div>
+    </footer>
+
+    <!--CTA Whatsapp-->
+    <a
+      href="https://wa.me/2250142789097"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="whatsapp-float"
+      aria-label="Discuter sur WhatsApp"
+    >
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="collections.js"></script>
+  </body>
+</html>

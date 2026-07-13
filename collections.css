@@ -1,0 +1,983 @@
+ *,
+ *::before,
+ *::after {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+ :root {
+     --creme: #F5E9D3;
+     --beige: #F0DCC4;
+     --marine: #0E273A;
+     --terracotta: #C9622E;
+     --or: #C9942A;
+     --or-clair: #E8B84B;
+     --gris: #6B6B6B;
+     --vert: #2D5A3D;
+     --terre: #8B3A2A;
+     --ombre: rgba(44, 24, 16, 0.12);
+ }
+
+ html {
+     scroll-behavior: smooth;
+ }
+
+ body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--marine);
+    overflow-x: hidden;
+    background: var(--creme);
+}
+
+ /*  KENTE  */
+ .kente {
+     width: 100%;
+     height: 14px;
+     background: var(--terre);
+ }
+
+ /*  HEADER  */
+ header {
+     position: sticky;
+     top: 0;
+     z-index: 100;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     padding: 20px 6%;
+     background: var(--terre);
+     border-bottom: none;
+     backdrop-filter: none;
+     box-shadow: none;
+     height: 90px;
+ }
+
+ .logo {
+     display: flex;
+     align-items: center;
+ }
+
+ .mon-logo {
+     width: 220px;
+     height: auto;
+ }
+
+ header ul {
+     display: flex;
+     gap: 3rem;
+     list-style: none;
+ }
+
+ header ul a {
+     color: #fff;
+     text-decoration: none;
+     font-size: 0.95rem;
+     font-weight: 500;
+     letter-spacing: 0.02em;
+     transition: color 0.3s;
+ }
+
+ header ul a:hover,
+ header ul a.active {
+     color: var(--terracotta);
+ }
+
+ /*  HERO COLLECTIONS  */
+ .hero-collections {
+     padding: 4rem 6%;
+     background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.05"><path d="M20,20 L30,10 L40,20 L30,30 Z M60,20 L70,10 L80,20 L70,30 Z M40,50 L50,40 L60,50 L50,60 Z M20,70 L30,60 L40,70 L30,80 Z M60,70 L70,60 L80,70 L70,80 Z" fill="%230E273A"/></svg>');
+     background-color: var(--creme);
+     text-align: center;
+ }
+
+ .hero-collections .hero-eyebrow {
+     font-size: 0.8rem;
+     letter-spacing: 0.2em;
+     text-transform: uppercase;
+     color: var(--terracotta);
+     font-weight: 600;
+     margin-bottom: 0.5rem;
+ }
+
+ .hero-collections h1 {
+     font-family: 'Cormorant Garamond', serif;
+     font-size: clamp(2.5rem, 5vw, 3.8rem);
+     line-height: 1.15;
+     font-weight: 700;
+     color: var(--marine);
+     margin-bottom: 1rem;
+ }
+
+ .hero-collections h1 em {
+     font-style: normal;
+     color: var(--terracotta);
+ }
+
+ .hero-collections .hero-desc {
+     font-size: 1rem;
+     line-height: 1.8;
+     color: rgba(14, 39, 58, 0.7);
+     max-width: 600px;
+     margin: 0 auto 1.5rem;
+ }
+
+ .breadcrumb {
+     font-size: 0.85rem;
+     color: rgba(14, 39, 58, 0.5);
+ }
+
+ .breadcrumb a {
+     color: var(--terracotta);
+     text-decoration: none;
+ }
+
+ .breadcrumb a:hover {
+     text-decoration: underline;
+ }
+
+ /*  FILTRES  */
+ .filters {
+     display: flex;
+     justify-content: center;
+     gap: 1rem;
+     flex-wrap: wrap;
+     padding: 2rem 6% 0;
+     background: var(--creme);
+ }
+
+ .filter-btn {
+     padding: 10px 24px;
+     border: 1px solid var(--marine);
+     background: transparent;
+     color: var(--marine);
+     border-radius: 50px;
+     font-size: 0.8rem;
+     font-weight: 500;
+     cursor: pointer;
+     transition: all 0.3s;
+     font-family: 'Inter', sans-serif;
+ }
+
+ .filter-btn:hover,
+ .filter-btn.active {
+     background: var(--marine);
+     color: #fff;
+ }
+
+ /*  GRILLE DES PRODUITS  */
+ .products-grid {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     gap: 2rem;
+     padding: 3rem 6% 4rem;
+     background: var(--creme);
+ }
+
+ .product-card {
+     background: #fff;
+     border-radius: 20px;
+     overflow: hidden;
+     transition: all 0.4s;
+     box-shadow: 0 4px 20px rgba(30, 26, 22, 0.06);
+ }
+
+ .product-card:hover {
+     transform: translateY(-8px);
+     box-shadow: 0 20px 40px rgba(30, 26, 22, 0.12);
+ }
+
+ .product-card.hidden {
+     display: none;
+ }
+
+ .product-image {
+     height: 280px;
+     background: var(--beige);
+     position: relative;
+     overflow: hidden;
+ }
+
+ .product-image img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     transition: transform 0.5s ease;
+ }
+
+ .product-card:hover .product-image img {
+     transform: scale(1.05);
+ }
+
+ .product-badge {
+     position: absolute;
+     top: 1rem;
+     right: 1rem;
+     background: var(--terracotta);
+     color: #fff;
+     padding: 4px 14px;
+     border-radius: 50px;
+     font-size: 0.7rem;
+     font-weight: 600;
+     letter-spacing: 0.05em;
+     text-transform: uppercase;
+ }
+
+ .product-badge.sold-out {
+     background: var(--gris);
+ }
+
+ .product-badge.new {
+     background: var(--vert);
+ }
+
+ .product-info {
+     padding: 1.8rem;
+ }
+
+ .product-category {
+     font-size: 0.7rem;
+     text-transform: uppercase;
+     letter-spacing: 0.1em;
+     color: var(--terracotta);
+     font-weight: 600;
+ }
+
+ .product-name {
+     font-family: 'Cormorant Garamond', serif;
+     font-size: 1.4rem;
+     font-weight: 700;
+     color: var(--marine);
+     margin: 0.3rem 0;
+ }
+
+ .product-desc {
+     font-size: 0.85rem;
+     color: rgba(14, 39, 58, 0.6);
+     line-height: 1.6;
+     margin-bottom: 1rem;
+ }
+
+ .product-price {
+     font-size: 1.1rem;
+     font-weight: 600;
+     color: var(--terracotta);
+ }
+
+ .product-actions {
+     display: flex;
+     gap: 0.8rem;
+     margin-top: 1rem;
+ }
+
+ .btn-product {
+     padding: 10px 20px;
+     border: none;
+     border-radius: 50px;
+     font-size: 0.75rem;
+     font-weight: 600;
+     text-transform: uppercase;
+     letter-spacing: 0.05em;
+     cursor: pointer;
+     transition: all 0.3s;
+     text-decoration: none;
+     display: inline-flex;
+     align-items: center;
+     gap: 8px;
+     font-family: 'Inter', sans-serif;
+ }
+
+ .btn-primary-product {
+     background: var(--marine);
+     color: #fff;
+ }
+
+ .btn-primary-product:hover {
+     background: var(--terracotta);
+     transform: translateY(-2px);
+ }
+
+ .btn-outline-product {
+     background: transparent;
+     color: var(--marine);
+     border: 1px solid var(--marine);
+ }
+
+ .btn-outline-product:hover {
+     background: var(--marine);
+     color: #fff;
+     transform: translateY(-2px);
+ }
+
+ .btn-outline-product:disabled {
+     opacity: 0.5;
+     cursor: not-allowed;
+     transform: none;
+ }
+
+ .btn-outline-product:disabled:hover {
+     background: transparent;
+     color: var(--marine);
+     transform: none;
+ }
+
+ /* COMPTEUR PRODUITS  */
+ .products-count {
+     text-align: center;
+     padding: 0 6% 1rem;
+     font-size: 0.9rem;
+     color: rgba(14, 39, 58, 0.6);
+     background: var(--creme);
+ }
+
+ .products-count span {
+     font-weight: 700;
+     color: var(--terracotta);
+ }
+
+ /*  BANDE WHATSAPP  */
+ .whatsapp-banner {
+     background: var(--marine);
+     padding: 2.5rem 6%;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     flex-wrap: wrap;
+     gap: 1.5rem;
+ }
+
+ .wa-text h3 {
+     font-family: 'Cormorant Garamond', serif;
+     font-size: 1.5rem;
+     font-weight: 700;
+     color: #fff;
+     margin-bottom: 0.3rem;
+ }
+
+ .wa-text p {
+     font-size: 0.85rem;
+     color: rgba(245, 237, 216, 0.65);
+ }
+
+ .wa-btn {
+     background: var(--terracotta);
+     color: #fff;
+     text-decoration: none;
+     padding: 14px 28px;
+     font-size: 0.8rem;
+     font-weight: 700;
+     letter-spacing: 0.05em;
+     display: inline-flex;
+     align-items: center;
+     gap: 10px;
+     border-radius: 2px;
+     transition: background 0.3s;
+ }
+
+ .wa-btn:hover {
+     background: var(--terre);
+ }
+
+ .wa-btn i {
+     font-size: 1.2rem;
+ }
+
+ /* FOOTER */
+ footer {
+     background: var(--marine);
+     padding: 4rem 6% 1.5rem;
+     position: relative;
+ }
+
+ /* Bande décorative en haut du footer avec motif kente */
+ footer::before {
+     content: '';
+     position: absolute;
+     top: 0;
+     left: 0;
+     right: 0;
+     height: 6px;
+     background: repeating-linear-gradient(90deg,
+             var(--terracotta) 0px,
+             var(--terracotta) 20px,
+             var(--or-clair) 20px,
+             var(--or-clair) 40px,
+             var(--terre) 40px,
+             var(--terre) 60px,
+             var(--terracotta) 60px,
+             var(--terracotta) 80px);
+ }
+
+ .footer-content {
+     max-width: 1200px;
+     margin: 0 auto;
+     display: grid;
+     grid-template-columns: 2fr 1fr 1fr 1.5fr;
+     gap: 3rem;
+     padding: 1rem 0 2rem;
+ }
+
+ /* Colonne Brand */
+ .footer-brand {
+     display: flex;
+     flex-direction: column;
+     gap: 1.2rem;
+ }
+
+ .footer-mini-logo {
+     width: 240px;
+     filter: brightness(0) invert(1);
+     display: block;
+     transition: transform 0.3s ease;
+ }
+
+ .footer-mini-logo:hover {
+     transform: scale(1.03);
+ }
+
+ .footer-desc {
+     font-size: 0.92rem;
+     color: rgba(245, 237, 216, 0.65);
+     line-height: 1.8;
+     max-width: 380px;
+     font-weight: 300;
+     margin: 0;
+ }
+
+ .footer-social {
+     display: flex;
+     gap: 0.8rem;
+     margin-top: 0.3rem;
+ }
+
+ .social-icon {
+     width: 40px;
+     height: 40px;
+     border-radius: 50%;
+     background: rgba(245, 237, 216, 0.06);
+     color: var(--creme);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     text-decoration: none;
+     font-size: 1rem;
+     transition: all 0.3s ease;
+     border: 1px solid rgba(245, 237, 216, 0.06);
+ }
+
+ .social-icon:hover {
+     background: var(--terracotta);
+     transform: translateY(-4px) scale(1.05);
+     box-shadow: 0 8px 25px rgba(201, 98, 46, 0.35);
+     border-color: var(--terracotta);
+ }
+
+ /* Colonnes liens */
+ .footer-col h4 {
+     font-size: 0.75rem;
+     letter-spacing: 0.2em;
+     text-transform: uppercase;
+     color: var(--or-clair);
+     margin-bottom: 1.3rem;
+     font-weight: 600;
+     position: relative;
+     padding-bottom: 0.6rem;
+ }
+
+ .footer-col h4::after {
+     content: '';
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     width: 30px;
+     height: 2px;
+     background: var(--terracotta);
+     border-radius: 2px;
+ }
+
+ .footer-col ul {
+     list-style: none;
+     padding: 0;
+     margin: 0;
+ }
+
+ .footer-col ul li {
+     margin-bottom: 0.6rem;
+ }
+
+ .footer-col ul a {
+     font-size: 0.92rem;
+     color: rgba(245, 237, 216, 0.5);
+     text-decoration: none;
+     transition: all 0.3s ease;
+     display: inline-block;
+     position: relative;
+ }
+
+ .footer-col ul a::after {
+     content: '';
+     position: absolute;
+     bottom: -2px;
+     left: 0;
+     width: 0;
+     height: 1px;
+     background: var(--or-clair);
+     transition: width 0.3s ease;
+ }
+
+ .footer-col ul a:hover {
+     color: var(--or-clair);
+     transform: translateX(5px);
+ }
+
+ .footer-col ul a:hover::after {
+     width: 100%;
+ }
+
+ .footer-col ul a i {
+     margin-right: 6px;
+     width: 18px;
+     color: var(--terracotta);
+     transition: color 0.3s ease;
+ }
+
+ .footer-col ul a:hover i {
+     color: var(--or-clair);
+ }
+
+ /* Colonne Newsletter */
+ .footer-newsletter {
+     display: flex;
+     flex-direction: column;
+     gap: 0.8rem;
+ }
+
+ .newsletter-text {
+     font-size: 0.85rem;
+     color: rgba(245, 237, 216, 0.5);
+     line-height: 1.5;
+     margin-bottom: 0.2rem;
+ }
+
+ .newsletter-form {
+     display: flex;
+     gap: 0.5rem;
+     margin-bottom: 1rem;
+ }
+
+ .newsletter-form input {
+     flex: 1;
+     padding: 10px 14px;
+     border: 1px solid rgba(245, 237, 216, 0.15);
+     border-radius: 4px;
+     background: rgba(245, 237, 216, 0.05);
+     color: var(--creme);
+     font-size: 0.85rem;
+     outline: none;
+     transition: border-color 0.3s ease;
+ }
+
+ .newsletter-form input::placeholder {
+     color: rgba(245, 237, 216, 0.3);
+ }
+
+ .newsletter-form input:focus {
+     border-color: var(--terracotta);
+ }
+
+ .newsletter-form button {
+     padding: 10px 16px;
+     background: var(--terracotta);
+     color: #fff;
+     border: none;
+     border-radius: 4px;
+     cursor: pointer;
+     transition: all 0.3s ease;
+     font-size: 1rem;
+ }
+
+ .newsletter-form button:hover {
+     background: var(--terre);
+     transform: translateX(3px);
+ }
+
+ .footer-contact {
+     display: flex;
+     flex-direction: column;
+     gap: 0.5rem;
+     margin-top: 0.2rem;
+ }
+
+ .footer-contact a {
+     font-size: 0.85rem;
+     color: rgba(245, 237, 216, 0.5);
+     text-decoration: none;
+     transition: all 0.3s ease;
+     display: flex;
+     align-items: center;
+     gap: 10px;
+ }
+
+ .footer-contact a i {
+     width: 18px;
+     color: var(--terracotta);
+     font-size: 0.85rem;
+     transition: color 0.3s ease;
+ }
+
+ .footer-contact a:hover {
+     color: var(--or-clair);
+ }
+
+ .footer-contact a:hover i {
+     color: var(--or-clair);
+ }
+
+ /* Copyright */
+ .footer-bottom {
+     border-top: 1px solid rgba(245, 237, 216, 0.06);
+     padding-top: 1.8rem;
+     margin-top: 0.5rem;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     flex-wrap: wrap;
+     gap: 1rem;
+     max-width: 1200px;
+     margin-left: auto;
+     margin-right: auto;
+ }
+
+ .footer-bottom p {
+     font-size: 0.78rem;
+     color: rgba(245, 237, 216, 0.3);
+     font-weight: 300;
+ }
+
+ .footer-legal {
+     display: flex;
+     align-items: center;
+     gap: 0.6rem;
+     flex-wrap: wrap;
+ }
+
+ .footer-legal a {
+     color: rgba(245, 237, 216, 0.3);
+     text-decoration: none;
+     font-size: 0.75rem;
+     transition: color 0.3s ease;
+ }
+
+ .footer-legal a:hover {
+     color: var(--or-clair);
+ }
+
+ .footer-legal span {
+     color: rgba(245, 237, 216, 0.1);
+ }
+
+ /* CTA WHATSAPP  */
+ .whatsapp-float {
+     position: fixed;
+     bottom: 30px;
+     right: 30px;
+     background-color: #25d366;
+     color: #fff;
+     border-radius: 50%;
+     width: 64px;
+     height: 64px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     text-decoration: none;
+     box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+     z-index: 9999;
+     transition: all 0.3s ease;
+     border: none;
+     cursor: pointer;
+ }
+
+ .whatsapp-float i {
+     font-size: 2.4rem;
+ }
+
+ .whatsapp-float .wa-text {
+     display: none;
+ }
+
+ .whatsapp-float:hover {
+     transform: scale(1.08);
+     background-color: #20b95c;
+     box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+ }
+
+ /*  RESPONSIVE */
+ @media (max-width: 1024px) {
+     .footer-content {
+         grid-template-columns: 1.5fr 1fr 1fr 1fr;
+         gap: 2rem;
+     }
+
+     .products-grid {
+         grid-template-columns: repeat(2, 1fr);
+     }
+ }
+
+ @media (max-width: 900px) {
+     header ul {
+         gap: 2rem;
+     }
+
+     .hero-collections {
+         padding: 3rem 5%;
+     }
+
+     .footer-content {
+         grid-template-columns: 1fr 1fr;
+         gap: 2.5rem;
+     }
+
+     .footer-brand {
+         grid-column: 1 / -1;
+         align-items: center;
+         text-align: center;
+     }
+
+     .footer-desc {
+         max-width: 100%;
+         text-align: center;
+     }
+
+     .footer-social {
+         justify-content: center;
+     }
+
+     .footer-col h4::after {
+         left: 50%;
+         transform: translateX(-50%);
+     }
+
+     .footer-col ul a {
+         display: block;
+         text-align: center;
+     }
+
+     .footer-col ul a::after {
+         left: 50%;
+         transform: translateX(-50%);
+     }
+
+     .footer-col ul a:hover {
+         transform: translateX(0);
+     }
+
+     .footer-newsletter {
+         align-items: center;
+         text-align: center;
+     }
+
+     .newsletter-form {
+         width: 100%;
+         max-width: 400px;
+     }
+
+     .footer-contact a {
+         justify-content: center;
+     }
+ }
+
+ @media (max-width: 768px) {
+     header {
+         flex-direction: column;
+         height: auto;
+         padding: 16px 6%;
+         gap: 1rem;
+     }
+
+     header ul {
+         gap: 1.8rem;
+         flex-wrap: wrap;
+         justify-content: center;
+     }
+
+     header ul a {
+         font-size: 0.85rem;
+     }
+
+     .mon-logo {
+         width: 180px;
+     }
+
+     .products-grid {
+         grid-template-columns: 1fr;
+         padding: 2rem 5%;
+     }
+
+     .whatsapp-banner {
+         flex-direction: column;
+         align-items: flex-start;
+     }
+
+     .wa-text h3 {
+         font-size: 1.2rem;
+     }
+
+     .whatsapp-float {
+         width: 56px;
+         height: 56px;
+         bottom: 20px;
+         right: 20px;
+     }
+
+     .whatsapp-float i {
+         font-size: 2rem;
+     }
+
+     .filters {
+         gap: 0.6rem;
+         padding: 1.5rem 5% 0;
+     }
+
+     .filter-btn {
+         padding: 8px 16px;
+         font-size: 0.7rem;
+     }
+
+     .product-image {
+         height: 220px;
+     }
+ }
+
+ @media (max-width: 600px) {
+     .footer-content {
+         grid-template-columns: 1fr;
+         gap: 2rem;
+     }
+
+     .footer-mini-logo {
+         width: 200px;
+     }
+
+     .footer-desc {
+         font-size: 0.85rem;
+     }
+
+     .social-icon {
+         width: 38px;
+         height: 38px;
+         font-size: 0.9rem;
+     }
+
+     .footer-col h4 {
+         text-align: center;
+     }
+
+     .footer-col h4::after {
+         left: 50%;
+         transform: translateX(-50%);
+     }
+
+     .footer-col ul a {
+         display: block;
+         text-align: center;
+     }
+
+     .footer-col ul a::after {
+         left: 50%;
+         transform: translateX(-50%);
+     }
+
+     .footer-newsletter {
+         align-items: center;
+         text-align: center;
+     }
+
+     .newsletter-form {
+         flex-direction: column;
+         max-width: 100%;
+     }
+
+     .newsletter-form button {
+         width: 100%;
+         justify-content: center;
+     }
+
+     .footer-contact a {
+         justify-content: center;
+     }
+
+     .hero-collections h1 {
+         font-size: 2rem;
+     }
+
+     .footer-bottom {
+         flex-direction: column;
+         text-align: center;
+     }
+
+     .footer-legal {
+         justify-content: center;
+     }
+
+     .whatsapp-float {
+         width: 52px;
+         height: 52px;
+         bottom: 15px;
+         right: 15px;
+     }
+
+     .whatsapp-float i {
+         font-size: 1.8rem;
+     }
+
+     header ul a {
+         font-size: 0.8rem;
+     }
+ }
+
+ @media (max-width: 400px) {
+     header ul {
+         gap: 1rem;
+     }
+
+     header ul a {
+         font-size: 0.75rem;
+     }
+
+     .mon-logo {
+         width: 140px;
+     }
+
+     .footer-mini-logo {
+         width: 160px;
+     }
+
+     .social-icon {
+         width: 34px;
+         height: 34px;
+         font-size: 0.8rem;
+     }
+
+     .footer-desc {
+         font-size: 0.8rem;
+     }
+
+     .footer-col ul a {
+         font-size: 0.85rem;
+     }
+
+     .whatsapp-float {
+         width: 48px;
+         height: 48px;
+         bottom: 12px;
+         right: 12px;
+     }
+
+     .whatsapp-float i {
+         font-size: 1.6rem;
+     }
+
+     .product-image {
+         height: 180px;
+     }
+ }
